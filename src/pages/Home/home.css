@@ -25,6 +25,7 @@
   padding: 5px;
 }
 .Map .map-header .map-title span {
+  margin-right: 5px;
   color: honeydew;
   background-color: lightseagreen;
 }
@@ -36,5 +37,5 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
 }
