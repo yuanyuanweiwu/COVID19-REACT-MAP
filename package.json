@@ -9,6 +9,7 @@
     "antd": "^3.26.11",
     "antd-mobile": "^2.3.1",
     "axios": "^0.19.2",
+    "babel-plugin-import": "^1.13.0",
     "dayjs": "^1.8.20",
     "echarts": "^4.6.0",
     "echarts-for-react": "^2.0.15-beta.1",

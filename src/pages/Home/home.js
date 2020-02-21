@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Skeleton, Divider } from "antd";
+import { Skeleton, Divider, Table } from "antd";
 import styles from "./home.css";
 import dayjs from "dayjs";
 import { Tabs } from "antd-mobile";
@@ -145,6 +145,12 @@ export class home extends Component {
         color: "#7ebe50"
       }
     ];
+    const columns = [
+      { title: "地区", dataIndex: "name", key: "name" },
+      { title: "确诊", dataIndex: "confirmedCount", key: "confirmedCount" },
+      { title: "死亡", dataIndex: "deadCount", key: "deadCount" },
+      { title: "治愈", dataIndex: "curedCount", key: "curedCount" }
+    ];
     return (
       <Skeleton loading={loading} active paragraph={{ rows: 50 }}>
         <div>
@@ -183,11 +189,22 @@ export class home extends Component {
                 </div>
               </div>
               <Divider />
-              <div className='map-main' style={{width:'100%'}}>
-              {mapList&&mapList.length>0?(  <Map provinceName={provinceName} mapList={mapList}/>):null}
+              <div className="map-main" style={{ width: "100%" }}>
+                {mapList && mapList.length > 0 ? (
+                  <Map provinceName={provinceName} mapList={mapList} />
+                ) : null}
+              </div>
+              <Divider />
+              <div className="table">
+                <Table
+                  className={styles.table}
+                  columns={columns}
+                  pagination={false}
+                  dataSource={mapList}
+                  rowKey={record => record.name}
+                />
               </div>
             </div>
-            <div></div>
           </Tabs>
         </div>
       </Skeleton>

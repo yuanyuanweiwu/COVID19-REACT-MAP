@@ -3,7 +3,7 @@ import ReactEcharts from 'echarts-for-react'
 import echarts from 'echarts/lib/echarts'
 import provinceMap from'../../utils/province-map'
 import { getChinaJson, getProvinceJson } from '../../services/getData'
-
+import chinaJson from 'echarts/map/json/china.json'
 export default class Map extends Component {
     constructor(props){
         super(props)
@@ -16,7 +16,7 @@ export default class Map extends Component {
         const{provinceName,mapList}=this.props
         const province = provinceName ? provinceMap[provinceName] : ''
         const chinaMapJson = await getChinaJson()
-        echarts.registerMap('china',chinaMapJson.data)
+        echarts.registerMap('china',chinaJson)
         this.setState({
             province: province,
             mapList: mapList
