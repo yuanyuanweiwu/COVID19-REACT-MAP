@@ -380,6 +380,7 @@ module.exports = function(webpackEnv) {
                       },
                     },
                   ],
+                  [ "import",{libraryName: "antd", style: 'css'}]
                 ],
                 // This is a feature of `babel-loader` for webpack (not Babel itself).
                 // It enables caching results in ./node_modules/.cache/babel-loader/
@@ -503,6 +504,7 @@ module.exports = function(webpackEnv) {
             // Make sure to add the new loader(s) before the "file" loader.
           ],
         },
+
       ],
     },
     plugins: [

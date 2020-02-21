@@ -49,7 +49,7 @@ export class home extends Component {
       deadTrendList: [],
       curedTrendList: [],
       provinceList: [],
-      loading: false,
+      loading: true,
       trendLoading: true
     };
   }
@@ -194,7 +194,6 @@ export class home extends Component {
                   <Map provinceName={provinceName} mapList={mapList} />
                 ) : null}
               </div>
-              <Divider />
               <div className="table">
                 <Table
                   className={styles.table}
@@ -205,6 +204,9 @@ export class home extends Component {
                 />
               </div>
             </div>
+         <div>2</div>
+         <div>3</div>
+         
           </Tabs>
         </div>
       </Skeleton>
